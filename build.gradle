@@ -1,0 +1,31 @@
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+plugins {
+	id 'java'
+	id 'application'
+}
+
+group = 'org.example'
+final def currentDate = LocalDate.now()
+version = 'v' + currentDate.format(DateTimeFormatter.ofPattern('yy.MM.dd'))
+
+repositories {
+	mavenCentral()
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(8)
+	}
+}
+
+application {
+	mainClassName = 'plby.Main'
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'plby.Main'
+	}
+}
