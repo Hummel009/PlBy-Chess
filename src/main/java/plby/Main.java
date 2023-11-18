@@ -6,11 +6,11 @@ import java.awt.*;
 public class Main extends JFrame {
 	public static void main(String[] args) {
 		EventQueue.invokeLater(() -> {
-			JFrame frame = new JFrame();
+			var frame = new JFrame();
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			frame.setTitle("Bootleg Chess");
 
-			ChessField field = new ChessField();
+			var field = new ChessField();
 			field.setSize(512, 512);
 			frame.add(field);
 

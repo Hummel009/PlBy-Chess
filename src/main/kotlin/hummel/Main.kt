@@ -7,8 +7,8 @@ import javax.swing.JFrame.EXIT_ON_CLOSE
 fun main() {
 	EventQueue.invokeLater {
 		val frame = JFrame()
-		frame.setDefaultCloseOperation(EXIT_ON_CLOSE)
-		frame.setTitle("Bootleg Chess")
+		frame.defaultCloseOperation = EXIT_ON_CLOSE
+		frame.title = "Bootleg Chess"
 		val field = ChessField()
 		field.setSize(512, 512)
 		frame.add(field)

@@ -6,7 +6,7 @@ plugins {
 	id("application")
 }
 
-group = "org.example"
+group = "hummel"
 version = "v" + LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
 repositories {
@@ -16,17 +16,27 @@ repositories {
 val embed: Configuration by configurations.creating
 
 dependencies {
-	embed("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.20")
+	embed("org.jetbrains.kotlin:kotlin-stdlib:1.9.20")
+}
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
 }
 
 application {
-	mainClass = "hummel.MainKt"
+	mainClass = "plby.Main"
 }
 
 tasks {
 	jar {
 		manifest {
-			attributes(mapOf("Main-Class" to "hummel.MainKt"))
+			attributes(
+				mapOf(
+					"Main-Class" to "plby.Main"
+				)
+			)
 		}
 		from(embed.map {
 			if (it.isDirectory) it else zipTree(it)

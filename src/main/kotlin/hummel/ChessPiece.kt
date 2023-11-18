@@ -7,7 +7,7 @@ import javax.swing.Icon
 import javax.swing.ImageIcon
 import javax.swing.JLabel
 
-class ChessPiece(val piece: PieceType, val row: Int, val column: Int) : JLabel() {
+class ChessPiece(private val piece: PieceType, val row: Int, val column: Int) : JLabel() {
 	init {
 		try {
 			val imagePath = piece.imagePath
@@ -15,7 +15,7 @@ class ChessPiece(val piece: PieceType, val row: Int, val column: Int) : JLabel()
 			val bufferedImage = ImageIO.read(imageStream)
 			val scaledImage = bufferedImage.getScaledInstance(58, 58, Image.SCALE_SMOOTH)
 			val imageIcon: Icon = ImageIcon(scaledImage)
-			setIcon(imageIcon)
+			icon = imageIcon
 		} catch (e: Exception) {
 			e.printStackTrace()
 		}

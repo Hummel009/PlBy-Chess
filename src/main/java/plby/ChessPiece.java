@@ -16,10 +16,10 @@ class ChessPiece extends JLabel {
 		this.row = row;
 		this.column = column;
 		try {
-			String imagePath = pieceType.getImagePath();
-			InputStream imageStream = Main.class.getResourceAsStream(imagePath);
-			BufferedImage bufferedImage = ImageIO.read(imageStream);
-			Image scaledImage = bufferedImage.getScaledInstance(58, 58, Image.SCALE_SMOOTH);
+			var imagePath = pieceType.getImagePath();
+			var imageStream = Main.class.getResourceAsStream(imagePath);
+			var bufferedImage = ImageIO.read(imageStream);
+			var scaledImage = bufferedImage.getScaledInstance(58, 58, Image.SCALE_SMOOTH);
 			Icon imageIcon = new ImageIcon(scaledImage);
 			setIcon(imageIcon);
 		} catch (Exception e) {

@@ -11,14 +11,14 @@ class ChessField extends JPanel {
 	ChessField() {
 		setLayout(new GridLayout(8, 8));
 
-		for (int i = 0; i < 8; i++) {
+		for (var i = 0; i < 8; i++) {
 			pieces.add(new ChessPiece(PieceType.WHITE_PAWN, 1, i));
 			pieces.add(new ChessPiece(PieceType.WHITE_PAWN, 6, i));
 		}
 
-		for (int i = 0; i < 8; i++) {
-			for (int j = 0; j < 8; j++) {
-				JLabel cell = getExistingPiece(i, j);
+		for (var i = 0; i < 8; i++) {
+			for (var j = 0; j < 8; j++) {
+				var cell = getExistingPiece(i, j);
 
 				cell.setOpaque(true);
 				cell.setBackground((i % 2 == j % 2) ? Color.BLACK : Color.WHITE);
@@ -28,7 +28,7 @@ class ChessField extends JPanel {
 	}
 
 	private JLabel getExistingPiece(int i, int j) {
-		for (ChessPiece piece : pieces) {
+		for (var piece : pieces) {
 			if (piece.getRow() == i && piece.getColumn() == j) {
 				return piece;
 			}
