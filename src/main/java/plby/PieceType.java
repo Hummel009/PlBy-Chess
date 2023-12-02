@@ -2,6 +2,7 @@ package plby;
 
 import java.awt.*;
 
+@SuppressWarnings("unused")
 enum PieceType {
 	WHITE_PAWN("/img/white_pawn.png", Color.WHITE),
 	WHITE_ROOK("/img/white_rook.png", Color.WHITE),
@@ -17,8 +18,8 @@ enum PieceType {
 	BLACK_KING("/img/black_king.png", Color.BLACK),
 	NULL("/img/transparent.png", null);
 
-	private String imagePath;
-	private Color color;
+	private final String imagePath;
+	private final Color color;
 
 	PieceType(String imagePath, Color color) {
 		this.imagePath = imagePath;

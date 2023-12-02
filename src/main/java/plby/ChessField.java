@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 class ChessField extends JPanel {
-	private Collection<ChessPiece> pieces = new ArrayList<>();
+	private final Collection<ChessPiece> pieces = new ArrayList<>();
 
 	ChessField() {
 		setLayout(new GridLayout(8, 8));
@@ -21,7 +21,7 @@ class ChessField extends JPanel {
 				var cell = getExistingPiece(i, j);
 
 				cell.setOpaque(true);
-				cell.setBackground((i % 2 == j % 2) ? Color.BLACK : Color.WHITE);
+				cell.setBackground(i % 2 == j % 2 ? Color.BLACK : Color.WHITE);
 				add(cell);
 			}
 		}

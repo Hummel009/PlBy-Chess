@@ -3,13 +3,12 @@ package plby;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.InputStream;
 
+@SuppressWarnings("unused")
 class ChessPiece extends JLabel {
-	private PieceType piece;
-	private int row;
-	private int column;
+	private final PieceType piece;
+	private final int row;
+	private final int column;
 
 	ChessPiece(PieceType pieceType, int row, int column) {
 		piece = pieceType;
