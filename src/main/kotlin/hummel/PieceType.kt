@@ -2,6 +2,7 @@ package hummel
 
 import java.awt.Color
 
+@Suppress("unused")
 enum class PieceType(val imagePath: String, val color: Color?) {
 	WHITE_PAWN("/img/white_pawn.png", Color.WHITE),
 	WHITE_ROOK("/img/white_rook.png", Color.WHITE),

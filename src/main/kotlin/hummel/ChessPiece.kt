@@ -7,7 +7,7 @@ import javax.swing.Icon
 import javax.swing.ImageIcon
 import javax.swing.JLabel
 
-class ChessPiece(private val piece: PieceType, val row: Int, val column: Int) : JLabel() {
+class ChessPiece(piece: PieceType, val row: Int, val column: Int) : JLabel() {
 	init {
 		try {
 			val imagePath = piece.imagePath
