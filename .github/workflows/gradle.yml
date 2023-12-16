@@ -26,4 +26,6 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: compiled-artifact
-          path: ./build/libs/*.jar
+          path: |
+            ./appJava/build/libs/*.jar
+            ./appKotlin/build/libs/*.jar

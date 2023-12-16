@@ -1,0 +1,2 @@
+include(":appJava")
+include(":appKotlin")
