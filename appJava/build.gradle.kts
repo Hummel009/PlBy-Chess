@@ -8,10 +8,6 @@ plugins {
 group = "hummel"
 version = "v" + LocalDate.now().format(DateTimeFormatter.ofPattern("yy.MM.dd"))
 
-repositories {
-	mavenCentral()
-}
-
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
